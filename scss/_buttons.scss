@@ -1,0 +1,33 @@
+.btn {
+    font-weight: $btn-font-weight;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-success {
+    @include custom-button(
+        #3c4b25,
+        #b2d95d,
+    )
+}
+
+.btn-primary {
+    @include custom-button(
+        #1b3f5b,
+        #469cdf,
+    )
+}
+
+.btn-secondary {
+    @include custom-button(
+        #565450,
+        #c7c4c0,
+    )
+}
+
+.btn-danger {
+    @include custom-button(
+        #b03723,
+        #c9a098
+    )
+}
