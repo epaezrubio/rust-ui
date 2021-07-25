@@ -1,0 +1,24 @@
+$durability-bar-color: #ffffff;
+$durability-background: darken(desaturate($success, 15%), 5%);
+
+.durability-progress {
+  &-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+
+  &-bar {
+    height: 1rem;
+    background: $durability-background;
+
+    .progress-bar {
+      background: $durability-bar-color;
+    }
+  }
+
+  &-stability {
+    text-transform: uppercase;
+  }
+}

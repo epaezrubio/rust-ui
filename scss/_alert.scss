@@ -1,0 +1,30 @@
+.alert {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+
+  &-icon {
+    flex: 0 1;
+    padding-right: $alert-padding-x;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  &-text {
+    flex: 1;
+    text-transform: uppercase;
+  }
+
+  &-right {
+    flex: 0 1;
+    white-space: nowrap;
+    padding-left: $alert-padding-x;
+  }
+
+  &-highlight {
+    color: rgba(255, 255, 255, 1);
+  }
+}

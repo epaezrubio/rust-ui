@@ -1,19 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/dist/main.css" rel="stylesheet" />
+    <link href="/dist/css/main.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Demo</title>
 </head>
+
 <body>
-<button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-secondary">Secondary</button>
-<button type="button" class="btn btn-success">Join server</button>
-<button type="button" class="btn btn-danger">Danger</button>
-<button type="button" class="btn btn-link">Link</button>
+    <h2>Buttons</h2>
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-secondary">Secondary</button>
+    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-link">Link</button>
+
+    <h2>Progress</h2>
+    <div class="progress progress-success">
+        <div class="progress-label">20%</div>
+        <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+            aria-valuemax="100"></div>
+        <div class="progress-bar bg-light-success" role="progressbar" style="width: 15%" aria-valuenow="25" aria-valuemin="0"
+            aria-valuemax="100"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-label">255</div>
+        <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+            aria-valuemax="100"></div>
+        <div class="progress-bar bg-light-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+            aria-valuemax="100"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
+            aria-valuemax="100"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-label">120</div>
+        <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
+            aria-valuemax="100"></div>
+    </div>
+
+    <h2>Feature progress</h2>
+    <div class="feature-progress">
+        <i class="feature-progress-icon material-icons">add</i>
+        <div class="feature-progress-bar progress">
+            <div class="progress-label">100</div>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
+                aria-valuemax="100"></div>
+        </div>
+    </div>
+    <div class="feature-progress">
+        <i class="feature-progress-icon material-icons">local_drink</i>
+        <div class="feature-progress-bar progress">
+            <div class="progress-label">55</div>
+            <div class="progress-bar bg-info" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0"
+                aria-valuemax="100"></div>
+        </div>
+    </div>
+    <div class="feature-progress">
+        <i class="feature-progress-icon material-icons">restaurant_menu</i>
+        <div class="feature-progress-bar progress">
+            <div class="progress-label">165</div>
+            <div class="progress-bar bg-warning" role="progressbar" style="width: 66%" aria-valuenow="55" aria-valuemin="0"
+                aria-valuemax="250"></div>
+        </div>
+    </div>
+
+    <h2>Durability</h2>
+    <div class="durability-progress">
+        <div class="durability-progress-text">
+            <span class="durability-progress-stability"></span>
+            <span class="durability-progress-health">830 / 1000</span>
+        </div>
+        <div class="durability-progress-bar progress">
+            <div class="progress-bar" role="progressbar" style="width: 83%" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+    </div>
+    <br>
+    <div class="durability-progress">
+        <div class="durability-progress-text">
+            <span class="durability-progress-stability">86% Stability</span>
+            <span class="durability-progress-health">830 / 1000</span>
+        </div>
+        <div class="durability-progress-bar progress">
+            <div class="progress-bar" role="progressbar" style="width: 83%" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+    </div>
+
+    <h2>Alerts</h2>
+    <div class="alert alert-success" role="alert">
+        <i class="alert-icon material-icons">home</i>
+        <div class="alert-text alert-highlight">
+            Upkeep time
+        </div>
+        <div class="alert-right">&gt;72 hrs</div>
+    </div>
+
+    <div class="alert alert-success" role="alert">
+        <i class="alert-icon material-icons">square_foot</i>
+        <div class="alert-text">
+            Building privilege
+        </div>
+    </div>
+
+    <div class="alert alert-warning" role="alert">
+        <i class="alert-icon material-icons">remove_circle_outline</i>
+        <div class="alert-text">
+            Building blocked
+        </div>
+    </div>
+
+    <div class="alert alert-danger" role="alert">
+        <i class="alert-icon material-icons">restaurant_menu</i>
+        <div class="alert-text">
+            Starving
+        </div>
+    </div>
+
+    <div class="alert alert-danger" role="alert">
+        <i class="alert-icon material-icons">ac_unit</i>
+        <div class="alert-text">
+            Too cold
+        </div>
+        <div class="alert-right">
+            -25°c
+        </div>
+    </div>
+
+    <h2>Inventory</h2>
+    <div class="inventory">
+        <div class="item-row">
+            <div class="item-container"></div>
+            <div class="item-container"></div>
+            <div class="item-container"></div>
+            <div class="item-container"></div>
+            <div class="item-container"></div>
+            <div class="item-container"></div>
+        </div>
+        <div class="item-row">
+            <div class="item-container"></div>
+            <div class="item-container"></div>
+            <div class="item-container"></div>
+            <div class="item-container"></div>
+            <div class="item-container"></div>
+            <div class="item-container"></div>
+        </div>
+        <div class="item-row">
+            <div class="item-container"></div>
+            <div class="item-container"></div>
+            <div class="item-container"></div>
+            <div class="item-container"></div>
+            <div class="item-container"></div>
+            <div class="item-container"></div>
+        </div>
+        <div class="item-row spaced">
+            <div class="item-container"></div>
+            <div class="item-container"></div>
+            <div class="item-container"></div>
+            <div class="item-container"></div>
+            <div class="item-container"></div>
+            <div class="item-container"></div>
+        </div>
+        <div class="item-row">
+            <div class="item-container">
+                <div class="item-sprite" style="background-image: url('images/rifle.ak.png')"></div>
+                <div class="item-durability bg-success" style="height: 33%"></div>
+                <div class="item-quantity">
+                    30
+                </div>
+            </div>
+            <div class="item-container">
+                <div class="item-sprite" style="background-image: url('images/syringe.medical.png')"></div>
+            </div>
+            <div class="item-container">
+                <div class="item-sprite" style="background-image: url('images/jackhammer.png')"></div>
+                <div class="item-durability bg-success" style="height: 97%"></div>
+            </div>
+            <div class="item-container"></div>
+            <div class="item-container"></div>
+            <div class="item-container selected">
+                <div class="item-sprite" style="background-image: url('images/explosive.timed.png')"></div>
+                <div class="item-quantity">
+                    7
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Cursor</h2>
+
+    <div id="cursor1" style="display: inline-block" class="mouse-interaction-container m-3">
+        <img src="images/crate.png" />
+    </div>
+    <div id="cursor2" style="display: inline-block" class="mouse-interaction-container m-3">
+        <img src="images/amored.door.png" />
+    </div>
+    <div id="cursor3" style="display: inline-block" class="mouse-interaction-container m-3">
+        <img src="images/rifle.ak.png" />
+    </div>
+
+    <script type="module">
+        import { MouseInteractionElement } from '/dist/js/interaction-mouse.js';
+
+        const target1 = document.querySelector('#cursor1')
+        const cursor1 = new MouseInteractionElement(target1, { icon: 'outbox', label: 'Open' })
+
+        cursor1.init()
+
+        const target2 = document.querySelector('#cursor2')
+        const cursor2 = new MouseInteractionElement(target2, { icon: 'sensor_door', label: 'Open door' })
+
+        cursor2.init()
+
+        const target3 = document.querySelector('#cursor3')
+        const cursor3 = new MouseInteractionElement(target3, { label: 'Assault rifle' })
+
+        cursor3.init()
+    </script>
+
+    <h2>Right-click menu</h2>
+    <div id="circular-menu-1" style="width: 600px; height: 600px;">
+    </div>
+    <script type="module">
+        import { CircularMenu } from '/dist/js/circular-menu.js';
+
+        const m1 = document.querySelector('#circular-menu-1')
+
+        const buildingBlocks = [
+            { cost: { quantity: 75, resource: 'Wood', stock: 1230 }, description: 'Building block of type door', label: 'Door', sprite: 'images/circular-menu/door.png' },
+            { cost: { quantity: 25, resource: 'Wood', stock: 1230 }, description: 'Building block of type floor-frame-triangle', label: 'Floor-frame-triangle', sprite: 'images/circular-menu/floor-frame-triangle.png' },
+            { cost: { quantity: 70, resource: 'Wood', stock: 1230 }, description: 'Building block of type floor-frame', label: 'Floor frame', sprite: 'images/circular-menu/floor-frame.png' },
+            { cost: { quantity: 105, resource: 'Wood', stock: 1230 }, description: 'Building block of type foundation-ramp', label: 'Foundation ramp', sprite: 'images/circular-menu/foundation-ramp.png' },
+            { cost: { quantity: 20, resource: 'Wood', stock: 1230 }, description: 'Building block of type foundation-stairs', label: 'Foundation stairs', sprite: 'images/circular-menu/foundation-stairs.png' },
+            { cost: { quantity: 75, resource: 'Wood', stock: 1230 }, description: 'Building block of type foundation-triangle', label: 'Foundation triangle', sprite: 'images/circular-menu/foundation-triangle.png' },
+            { cost: { quantity: 75, resource: 'Wood', stock: 1230 }, description: 'Building block of type foundation', label: 'Foundation', sprite: 'images/circular-menu/foundation.png' },
+            { cost: { quantity: 15, resource: 'Wood', stock: 1230 }, description: 'Building block of type stairs-2', label: 'Stairs 2', sprite: 'images/circular-menu/stairs-2.png' },
+            { cost: { quantity: 2000, resource: 'Wood', stock: 1230 }, description: 'Building block of type stairs-triangle-1', label: 'Stairs triangle 1', sprite: 'images/circular-menu/stairs-triangle-1.png' },
+            { cost: { quantity: 75, resource: 'Wood', stock: 1230 }, description: 'Building block of type stairs-triangle-2', label: 'Stairs triangle 2', sprite: 'images/circular-menu/stairs-triangle-2.png' },
+            { cost: { quantity: 13, resource: 'Wood', stock: 1230 }, description: 'Building block of type wall-half', label: 'Wall half', sprite: 'images/circular-menu/wall-half.png' },
+            { cost: { quantity: 75, resource: 'Wood', stock: 1230 }, description: 'Building block of type wall-low', label: 'Wall low', sprite: 'images/circular-menu/wall-low.png' },
+            { cost: { quantity: 120, resource: 'Wood', stock: 1230 }, description: 'Building block of type wall', label: 'Wall', sprite: 'images/circular-menu/wall.png' },
+            { cost: { quantity: 75, resource: 'Wood', stock: 1230 }, description: 'Building block of type window', label: 'Window', sprite: 'images/circular-menu/window.png' },
+        ]
+
+        const menu1 = new CircularMenu(m1, buildingBlocks)
+        menu1.init()
+    </script>
 </body>
+
 </html>
