@@ -1,4 +1,13 @@
+$success: #89b73c;
+$info: #4695ce;
+$warning: #c76e31;
+$danger: #b13824;
+$light: #c7c4c0;
+$dark: #565450;
+
 $body-bg: #1a1f19;
+$body-color: #eeeeee;
+
 $font-family-sans-serif: 'Oswald', sans-serif !default;
 
 $input-btn-padding-y: 1rem !default;
@@ -20,3 +29,11 @@ $link-color: #6a665e !default;
 
 $enable-rounded: false !default;
 
+$progress-height: 2.5rem;
+$progress-bar-color: rgba(255, 255, 255, 0.75);
+$progress-bg: transparent;
+
+$alert-padding-y: 0.57rem;
+$alert-padding-x: 0.57rem;
+$alert-border-width: 0;
+$alert-bg-scale: 0%;

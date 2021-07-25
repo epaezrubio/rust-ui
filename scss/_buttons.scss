@@ -6,28 +6,28 @@
 
 .btn-success {
     @include custom-button(
-        #3c4b25,
-        #b2d95d,
+        darken($success, 30%),
+        $success,
     )
 }
 
 .btn-primary {
     @include custom-button(
-        #1b3f5b,
-        #469cdf,
+        darken($info, 30%),
+        $info,
     )
 }
 
 .btn-secondary {
     @include custom-button(
-        #565450,
-        #c7c4c0,
+        $dark,
+        $light,
     )
 }
 
 .btn-danger {
     @include custom-button(
-        #b03723,
-        #c9a098
+        $danger,
+        lighten($danger, 40%)
     )
 }

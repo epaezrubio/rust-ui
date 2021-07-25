@@ -1,0 +1,24 @@
+$feature-padding: 0.25rem;
+
+.feature-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $feature-padding;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-bottom: $feature-padding;
+
+  &-icon {
+    flex: 0 1;
+    color: rgba(255, 255, 255, 0.6);
+    margin-right: $feature-padding;
+
+    &.material-icons {
+      font-size: 1.75rem;
+    }
+  }
+
+  &-bar {
+    flex: 1;
+  }
+}

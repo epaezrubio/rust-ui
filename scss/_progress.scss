@@ -1,0 +1,13 @@
+.progress {
+  position: relative;
+}
+
+.progress-label {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: $progress-bar-color;
+  position: absolute;
+  left: 1rem;
+  top: 0;
+}

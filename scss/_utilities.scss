@@ -1,0 +1,13 @@
+$light-theme-colors: ();
+
+@each $color, $value in $theme-colors {
+  $light-theme-colors: map-merge($light-theme-colors, ($color: lighten($value, 20%)));
+}
+
+$light-bg-utility: (
+    property: background-color,
+    class: bg-light,
+    values: $light-theme-colors
+);
+
+@include generate-utility($utility: $light-bg-utility, $infix: '');
