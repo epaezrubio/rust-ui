@@ -20,6 +20,7 @@
 @import "../node_modules/bootstrap/scss/containers";
 @import "../node_modules/bootstrap/scss/grid";
 @import "../node_modules/bootstrap/scss/buttons";
+@import "../node_modules/bootstrap/scss/badge";
 @import "../node_modules/bootstrap/scss/progress";
 @import "../node_modules/bootstrap/scss/alert";
 
@@ -32,6 +33,7 @@
 @import "alert";
 @import "feature-progress";
 @import "durability-progress";
+@import "server-list";
 @import "mouse-interaction";
 @import "circular-menu";
 @import "item";

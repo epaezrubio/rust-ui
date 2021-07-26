@@ -25,15 +25,15 @@
         <div class="progress-label">20%</div>
         <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
             aria-valuemax="100"></div>
-        <div class="progress-bar bg-light-success" role="progressbar" style="width: 15%" aria-valuenow="25" aria-valuemin="0"
-            aria-valuemax="100"></div>
+        <div class="progress-bar bg-light-success" role="progressbar" style="width: 15%" aria-valuenow="25"
+            aria-valuemin="0" aria-valuemax="100"></div>
     </div>
     <div class="progress">
         <div class="progress-label">255</div>
         <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
             aria-valuemax="100"></div>
-        <div class="progress-bar bg-light-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
-            aria-valuemax="100"></div>
+        <div class="progress-bar bg-light-info" role="progressbar" style="width: 25%" aria-valuenow="25"
+            aria-valuemin="0" aria-valuemax="100"></div>
     </div>
     <div class="progress">
         <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
@@ -50,8 +50,8 @@
         <i class="feature-progress-icon material-icons">add</i>
         <div class="feature-progress-bar progress">
             <div class="progress-label">100</div>
-            <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
-                aria-valuemax="100"></div>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100"
+                aria-valuemin="0" aria-valuemax="100"></div>
         </div>
     </div>
     <div class="feature-progress">
@@ -66,8 +66,8 @@
         <i class="feature-progress-icon material-icons">restaurant_menu</i>
         <div class="feature-progress-bar progress">
             <div class="progress-label">165</div>
-            <div class="progress-bar bg-warning" role="progressbar" style="width: 66%" aria-valuenow="55" aria-valuemin="0"
-                aria-valuemax="250"></div>
+            <div class="progress-bar bg-warning" role="progressbar" style="width: 66%" aria-valuenow="55"
+                aria-valuemin="0" aria-valuemax="250"></div>
         </div>
     </div>
 
@@ -75,10 +75,11 @@
     <div class="durability-progress">
         <div class="durability-progress-text">
             <span class="durability-progress-stability"></span>
-            <span class="durability-progress-health">830 / 1000</span>
+            <span class="durability-progress-health">100 / 150</span>
         </div>
         <div class="durability-progress-bar progress">
-            <div class="progress-bar" role="progressbar" style="width: 83%" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="83" aria-valuemin="0"
+                aria-valuemax="100"></div>
         </div>
     </div>
     <br>
@@ -88,7 +89,8 @@
             <span class="durability-progress-health">830 / 1000</span>
         </div>
         <div class="durability-progress-bar progress">
-            <div class="progress-bar" role="progressbar" style="width: 83%" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar" role="progressbar" style="width: 83%" aria-valuenow="83" aria-valuemin="0"
+                aria-valuemax="100"></div>
         </div>
     </div>
 
@@ -192,8 +194,59 @@
         </div>
     </div>
 
-    <h2>Cursor</h2>
+    <h2>Server list</h2>
+    <div class="server-list" id="server-list" style="max-height: 50rem;">
+        <div class="server-list-header">
+            <div class="server-list-star"></div>
+            <div class="server-list-content">Server name</div>
+            <div class="server-list-players">Players</div>
+            <div class="server-list-ping">Ping</div>
+        </div>
+    </div>
+    <script>
+        const serverList = document.querySelector('#server-list')
+        const elements = 20
 
+        for (let i = 0; i < elements; i++) {
+            const maxPop = 40 + 10 * ((Math.random() * 16) >> 0)
+            const maxTeam = (Math.random() * 4) >> 0
+            const languages = ['DE', 'EN', 'ES'].filter(() => Math.random() > 0.3)
+            const teamLimit = ['Solo', 'Duo', 'Trio'].slice(0, maxTeam)
+            const perks = ['Vip', 'Kits', 'Zombies', 'PvE'].filter(() => Math.random() > 0.3)
+
+            const newElement = document.createElement('div');
+
+            newElement.innerHTML = `
+                <div class="server-list-item">
+                    <div class="server-list-star${Math.random() > 0.90 ? ' active' : ''}">
+                        <i class="material-icons">star_outline</i>
+                    </div>
+                    <div class="server-list-content">
+                        <div class="server-list-title">[${languages.join('|')}]${Math.random() > 0.5 ? ' Rust' : ''} ${Math.random() > 0.5 ? 'Survival' : 'Beginner friendly'} ${Math.random() > 0.5 ? 'Vanilla Server' : ('x' + ((Math.random() * 5) >> 0))} - ${teamLimit.join('/')}${Math.random() > 0.5 ? ' | FULLWIPED' : ''}${Math.random() > 0.5 ? ' | Active admins' : ''} | ${perks.join(', ')}</div>
+                        <div class="server-list-subtitle">
+                            <div class="server-list-details">
+                                Procedural Map / ${(Math.random() * 24) >> 0} hours old
+                            </div>
+                            <div class="server-list-badges">
+                                ${Math.random() < 0.5 ? '<span class="server-list-badge">Biweekly</span>' : '<span class="server-list-badge">Weekly</span>'}
+                                ${Math.random() < 0.5 ? '<span class="server-list-badge">Vanilla</span>' : ''}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="server-list-players">
+                        ${(Math.random() * maxPop) >> 0} / ${maxPop}
+                    </div>
+                    <div class="server-list-ping">
+                        ${20 + (Math.random() * 100) >> 0}
+                    </div>
+                </div>
+            `
+
+            serverList.appendChild(newElement.querySelector('div'))
+        }
+    </script>
+
+    <h2>Cursor</h2>
     <div id="cursor1" style="display: inline-block" class="mouse-interaction-container m-3">
         <img src="images/crate.png" />
     </div>
