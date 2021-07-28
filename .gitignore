@@ -1,2 +1,6 @@
 node_modules
 dist
+
+stories/*.d.ts
+stories/*.map
+stories/*.js
