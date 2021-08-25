@@ -1,0 +1,80 @@
+.menu-screen {
+  display: flex;
+}
+
+.menu-screen-sidebar {
+  flex: 0 1 25rem;
+
+  .menu-screen-logo {
+    padding: 0 1rem;
+  }
+
+  .sidebar-items {
+    padding: 0 2rem 0 3rem;
+  }
+
+  .sidebar-item {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2rem;
+    display: block;
+    transition: all 200ms ease;
+
+    &-spaced {
+      margin-top: 3rem;
+    }
+  }
+}
+
+.menu-screen-secondary-sidebar {
+  flex: 0 1 20rem;
+  background: transparentize($danger, 0.7);
+  padding: 5rem 0rem 0 1.5rem;
+
+  .sidebar-item {
+    display: flex;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0);
+    transition: all 200ms ease;
+
+    &:not(.active):hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    &.active {
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    &-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 0 1 3.5rem;
+
+      .material-icons {
+        font-size: 3rem;
+      }
+    }
+
+    &-content {
+      padding-left: 1rem;
+    }
+
+    &-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+
+    &-subtitle {
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+  }
+}
+
+.menu-screen-content {
+  flex: 1 0;
+  padding: 0 0.75rem;
+}

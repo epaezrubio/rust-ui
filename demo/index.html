@@ -28,6 +28,7 @@
         <div class="progress-bar bg-light-success" role="progressbar" style="width: 15%" aria-valuenow="25"
             aria-valuemin="0" aria-valuemax="100"></div>
     </div>
+    <br>
     <div class="progress">
         <div class="progress-label">255</div>
         <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
@@ -35,10 +36,12 @@
         <div class="progress-bar bg-light-info" role="progressbar" style="width: 25%" aria-valuenow="25"
             aria-valuemin="0" aria-valuemax="100"></div>
     </div>
+    <br>
     <div class="progress">
         <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
             aria-valuemax="100"></div>
     </div>
+    <br>
     <div class="progress">
         <div class="progress-label">120</div>
         <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
@@ -195,12 +198,113 @@
     </div>
 
     <h2>Server list</h2>
-    <div class="server-list" id="server-list" style="max-height: 50rem;">
-        <div class="server-list-header">
-            <div class="server-list-star"></div>
-            <div class="server-list-content">Server name</div>
-            <div class="server-list-players">Players</div>
-            <div class="server-list-ping">Ping</div>
+    <div class="menu-screen" style="height: 100vh; background-color: #232522">
+        <div class="menu-screen-sidebar">
+            <div class="menu-screen-logo">
+                <img src="images/logo.png" width="100%" />
+            </div>
+            <div class="sidebar-items">
+                <a href="" class="sidebar-item">Session</a>
+                <a href="" class="sidebar-item">Play game</a>
+                <a href="" class="sidebar-item sidebar-item-spaced">News</a>
+                <a href="" class="sidebar-item">Inventory</a>
+                <a href="" class="sidebar-item">Item store</a>
+                <a href="" class="sidebar-item">Workshop</a>
+                <a href="" class="sidebar-item">Rust+</a>
+                <a href="" class="sidebar-item sidebar-item-spaced">Options</a>
+                <a href="" class="sidebar-item sidebar-item-spaced">Suicide</a>
+                <a href="" class="sidebar-item">Quit</a>
+            </div>
+        </div>
+        <div class="menu-screen-secondary-sidebar">
+            <div class="sidebar-item">
+                <div class="sidebar-item-icon">
+                    <img src="images/marque.png" width="100%" />
+                </div>
+                <div class="sidebar-item-content">
+                    <div class="sidebar-item-title">
+                        Official
+                    </div>
+                    <div class="sidebar-item-subtitle">
+                        4,970 players<br>48 servers
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-item active">
+                <div class="sidebar-item-icon">
+                    <i class="material-icons">storage</i>
+                </div>
+                <div class="sidebar-item-content">
+                    <div class="sidebar-item-title">
+                        Community
+                    </div>
+                    <div class="sidebar-item-subtitle">
+                        960 players<br>72 servers
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-item">
+                <div class="sidebar-item-icon">
+                    <i class="material-icons">science</i>
+                </div>
+                <div class="sidebar-item-content">
+                    <div class="sidebar-item-title">
+                        Modded
+                    </div>
+                    <div class="sidebar-item-subtitle">
+                        0 players<br>0 servers
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-item">
+                <div class="sidebar-item-icon">
+                    <i class="material-icons">people</i>
+                </div>
+                <div class="sidebar-item-content">
+                    <div class="sidebar-item-title">
+                        Friends
+                    </div>
+                    <div class="sidebar-item-subtitle">
+                        201 players<br>3 servers
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-item">
+                <div class="sidebar-item-icon">
+                    <i class="material-icons">star_outline</i>
+                </div>
+                <div class="sidebar-item-content">
+                    <div class="sidebar-item-title">
+                        Favourited
+                    </div>
+                    <div class="sidebar-item-subtitle">
+                        47 players<br>8 servers
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-item">
+                <div class="sidebar-item-icon">
+                    <i class="material-icons">history</i>
+                </div>
+                <div class="sidebar-item-content">
+                    <div class="sidebar-item-title">
+                        History
+                    </div>
+                    <div class="sidebar-item-subtitle">
+                        66 players<br>2 servers
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-screen-content">
+            <div class="server-list" id="server-list" style="height: 100%">
+                <div class="server-list-header">
+                    <div class="server-list-star"></div>
+                    <div class="server-list-content">Server name</div>
+                    <div class="server-list-players">Players</div>
+                    <div class="server-list-ping">Ping</div>
+                </div>
+            </div>
         </div>
     </div>
     <script>
