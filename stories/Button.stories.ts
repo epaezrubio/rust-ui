@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/html';
 import { createButton, ButtonProps, getButtonHtml } from './Button';
 
 export default {
-  title: 'Example/Button',
+  title: 'Components/Button',
   argTypes: {
     label: { control: 'text' },
     style: {

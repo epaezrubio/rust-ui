@@ -3,7 +3,7 @@ import { getNotificationHtml, NotificationProps } from './Notification';
 import { getStatusHtml, StatusProps } from './Status';
 
 export default {
-  title: 'Example/Status',
+  title: 'Components/Status',
   argTypes: {},
 } as Meta;
 

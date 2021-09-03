@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/html';
 import { createProgress, getProgressHtml, ProgressProps } from './Progress';
 
 export default {
-  title: 'Example/Progress',
+  title: 'Components/Progress',
   argTypes: {
     min: { control: 'number' },
     max: { control: 'number' },

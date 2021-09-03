@@ -9,6 +9,8 @@ export class MouseInteractionElement {
   private iconElement : HTMLDivElement | null = null;
 
   constructor(private target: HTMLElement, private options: MouseInteractionOptions) {
+    this.target = target;
+    this.options = options;
   }
 
   private onMouseEnter = (event: MouseEvent) => {
@@ -37,7 +39,7 @@ export class MouseInteractionElement {
     this.element.style.display = 'none';
   };
 
-  public setOptions (options: MouseInteractionOptions) {
+  public setOptions (options: MouseInteractionOptions): void {
     if (this.labelElement) {
       this.labelElement.innerText = options.label;
     }
