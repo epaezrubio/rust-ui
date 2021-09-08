@@ -1,7 +1,6 @@
 import '../dist/css/main.css';
 
 import { MouseInteractionElement } from '../lib/interaction-mouse';
-import { Items } from '../lib/items';
 
 export interface CursorProps {
   icon?: string;
