@@ -1,4 +1,5 @@
 import '../dist/css/main.css';
+import { Items } from '../lib/items';
 
 export interface InventoryItemProps {
   sprite?: string;
@@ -60,12 +61,12 @@ export function getInventoryHtml(): string {
             ${ getInventoryItemHtml() }
         </div>
         <div class="item-row">
-            ${ getInventoryItemHtml({ sprite: 'rifle.ak', quantity: 30, durability: 33 }) }
-            ${ getInventoryItemHtml({ sprite: 'syringe.medical' }) }
-            ${ getInventoryItemHtml({ sprite: 'jackhammer', durability: 97 }) }
+            ${ getInventoryItemHtml({ sprite: Items.RIFLE_AK, quantity: 30, durability: 33 }) }
+            ${ getInventoryItemHtml({ sprite: Items.SYRINGE_MEDICAL }) }
+            ${ getInventoryItemHtml({ sprite: Items.JACKHAMMER, durability: 97 }) }
             ${ getInventoryItemHtml() }
             ${ getInventoryItemHtml() }
-            ${ getInventoryItemHtml({ sprite: 'explosive.timed', quantity: 7, selected: true }) }
+            ${ getInventoryItemHtml({ sprite: Items.EXPLOSIVE_TIMED, quantity: 3, selected: true }) }
         </div>
     </div>`;
 }
