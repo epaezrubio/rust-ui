@@ -8,14 +8,20 @@ export interface CircularMenuOptionType {
   label: string;
   description: string;
   sprite: string;
-  enabled: boolean;
+  enabled?: boolean;
   cost: CircularMenuOptionCost;
 }
 
 class CircularMenuOption {
+  private menu: CircularMenu;
+  public option: CircularMenuOptionType;
+
   public element: HTMLImageElement | null = null;
 
-  constructor(private menu: CircularMenu, public option: CircularMenuOptionType) { }
+  constructor(menu: CircularMenu, option: CircularMenuOptionType) {
+    this.menu = menu;
+    this.option = option;
+  }
 
   public init(): void {
     this.element = document.createElement("img");
@@ -65,9 +71,12 @@ class CircularMenuOption {
 }
 
 class CircularMenuBackdrop {
+  private menu: CircularMenu;
   private element: HTMLDivElement | null = null;
 
-  constructor(private menu: CircularMenu) { }
+  constructor(menu: CircularMenu) {
+    this.menu = menu;
+  }
 
   public init(): void {
     this.element = document.createElement('div');
@@ -79,8 +88,8 @@ class CircularMenuBackdrop {
 
   private onMouseMove = (event: MouseEvent): void => {
     const center = {
-      x: this.menu.containerElement.clientWidth / 2,
-      y: this.menu.containerElement.clientHeight / 2
+      x: this.menu.width / 2,
+      y: this.menu.height / 2
     };
 
     // top is 0 and increases clockwise to Math.PI * 2
@@ -108,10 +117,13 @@ class CircularMenuBackdrop {
 }
 
 class CircularMenuSelection {
+  private menu: CircularMenu;
   private element: HTMLDivElement | null = null;
   private rotation = 0;
 
-  constructor(private menu: CircularMenu) { }
+  constructor(menu: CircularMenu) {
+    this.menu = menu;
+  }
 
   public init(): void {
     this.element = document.createElement('div');
@@ -153,6 +165,7 @@ class CircularMenuSelection {
 }
 
 class CircularMenuFocusedOption {
+  private menu: CircularMenu;
   private element: HTMLDivElement | null = null;
   private imageElement: HTMLImageElement | null = null;
   private titleElement: HTMLDivElement | null = null;
@@ -161,7 +174,9 @@ class CircularMenuFocusedOption {
   private resourceElement: HTMLSpanElement | null = null;
   private stockElement: HTMLSpanElement | null = null;
 
-  constructor(private menu: CircularMenu) { }
+  constructor(menu: CircularMenu) {
+    this.menu = menu;
+  }
 
   public init(): void {
     this.element = document.createElement('div');
@@ -235,15 +250,18 @@ class CircularMenuFocusedOption {
 export interface CircularMenuSettings {
   innerRadius: number;
   outerRadius: number;
+  width?: number;
+  height?: number;
   selectionBackground: string;
 }
 
 export class CircularMenu {
   public focusedMenuOption: CircularMenuOption | null = null;
 
-  public backdrop: CircularMenuBackdrop = new CircularMenuBackdrop(this);
-  public focusedOption: CircularMenuFocusedOption = new CircularMenuFocusedOption(this);
-  public selection: CircularMenuSelection = new CircularMenuSelection(this);
+  public containerElement: HTMLElement;
+  public backdrop: CircularMenuBackdrop;
+  public focusedOption: CircularMenuFocusedOption;
+  public selection: CircularMenuSelection;
   public options: CircularMenuOption[] = [];
 
   public settings: CircularMenuSettings;
@@ -253,11 +271,11 @@ export class CircularMenu {
   }
 
   get width(): number {
-    return this.containerElement.clientWidth;
+    return this.settings.width ?? this.containerElement.clientWidth;
   }
 
   get height(): number {
-    return this.containerElement.clientHeight;
+    return this.settings.height ?? this.containerElement.clientHeight;
   }
 
   get optionArc(): number {
@@ -277,8 +295,8 @@ export class CircularMenu {
     return this.options.indexOf(this.focusedMenuOption);
   }
 
-  constructor(public containerElement: HTMLElement, options: CircularMenuOptionType[] = [], settings: Partial<CircularMenuSettings> = {}) {
-    const minDimension = Math.min(containerElement.clientWidth, containerElement.clientHeight);
+  constructor(containerElement: HTMLElement, options: CircularMenuOptionType[] = [], settings: Partial<CircularMenuSettings> = {}) {
+    const minDimension = Math.min(settings.width ?? containerElement.clientWidth, settings.height ?? containerElement.clientHeight);
 
     this.settings = {
       outerRadius: minDimension / 2,
@@ -286,6 +304,11 @@ export class CircularMenu {
       selectionBackground: '#b13824',
       ...settings
     };
+
+    this.containerElement = containerElement;
+    this.backdrop = new CircularMenuBackdrop(this);
+    this.focusedOption = new CircularMenuFocusedOption(this);
+    this.selection = new CircularMenuSelection(this);
 
     this.setOptions(options);
   }
